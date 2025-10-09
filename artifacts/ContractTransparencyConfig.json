@@ -1,0 +1,94 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"visibilityRules()": "30173dd1"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "visibilityRules",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "enum ContractTransparencyConfig.ContractCfg",
+							"name": "contractCfg",
+							"type": "uint8"
+						},
+						{
+							"components": [
+								{
+									"internalType": "bytes32",
+									"name": "eventSignature",
+									"type": "bytes32"
+								},
+								{
+									"internalType": "enum ContractTransparencyConfig.Field[]",
+									"name": "visibleTo",
+									"type": "uint8[]"
+								}
+							],
+							"internalType": "struct ContractTransparencyConfig.EventLogConfig[]",
+							"name": "eventLogConfigs",
+							"type": "tuple[]"
+						}
+					],
+					"internalType": "struct ContractTransparencyConfig.VisibilityConfig",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		}
+	]
+}

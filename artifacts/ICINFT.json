@@ -1,0 +1,527 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"fullfillEntry(bytes32,string,(bool[8]))": "a3052abb",
+			"getMemory()": "3f4702c0",
+			"getMemoryOfAOwner(address)": "00a35b49",
+			"getMemoryStringRequestedToAdd(bytes32)": "05488a43",
+			"getMinter(uint256)": "5b7121f8",
+			"getOwnerFromRequestId(bytes32)": "ecbf5d8d",
+			"getPromptDetails(bytes32)": "1383cd5f",
+			"getPromptsIds()": "e205ba5b",
+			"getTokenIdToImageUrl(uint256)": "cea11446",
+			"mint(address,string)": "d0def521",
+			"mint(string)": "d85d3d27",
+			"registerEntry(string)": "9ff570cf",
+			"respond(bytes32,string)": "b07e9354",
+			"submitPrompt(uint256,string)": "0719c1bc"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "_requestId",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "string",
+					"name": "_newCid",
+					"type": "string"
+				},
+				{
+					"components": [
+						{
+							"internalType": "bool[8]",
+							"name": "data",
+							"type": "bool[8]"
+						}
+					],
+					"internalType": "struct ICINFT.RequestFullfillmentConfig",
+					"name": "_fullfilmentConfig",
+					"type": "tuple"
+				}
+			],
+			"name": "fullfillEntry",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getMemory",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"components": [
+						{
+							"internalType": "uint32",
+							"name": "openness",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "conscientiousness",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "extraversion",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "agreeableness",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "neuroticism",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "achievement",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "compassion",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "creativity",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "security",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "adventure",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "knowledge",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "autonomy",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "community",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "skillsHobbiesFrequency",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "interestsKnowledgeFrequency",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "keyEntitiesFrequency",
+							"type": "uint32"
+						}
+					],
+					"internalType": "struct ICINFT.PersonalityTraits",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_owner",
+					"type": "address"
+				}
+			],
+			"name": "getMemoryOfAOwner",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"components": [
+						{
+							"internalType": "uint32",
+							"name": "openness",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "conscientiousness",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "extraversion",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "agreeableness",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "neuroticism",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "achievement",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "compassion",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "creativity",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "security",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "adventure",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "knowledge",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "autonomy",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "community",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "skillsHobbiesFrequency",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "interestsKnowledgeFrequency",
+							"type": "uint32"
+						},
+						{
+							"internalType": "uint32",
+							"name": "keyEntitiesFrequency",
+							"type": "uint32"
+						}
+					],
+					"internalType": "struct ICINFT.PersonalityTraits",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "_requestId",
+					"type": "bytes32"
+				}
+			],
+			"name": "getMemoryStringRequestedToAdd",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "getMinter",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "_requestId",
+					"type": "bytes32"
+				}
+			],
+			"name": "getOwnerFromRequestId",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "_promptId",
+					"type": "bytes32"
+				}
+			],
+			"name": "getPromptDetails",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "prompt",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "response",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "sender",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getPromptsIds",
+			"outputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "",
+					"type": "bytes32[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "getTokenIdToImageUrl",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_to",
+					"type": "address"
+				},
+				{
+					"internalType": "string",
+					"name": "_imageUrl",
+					"type": "string"
+				}
+			],
+			"name": "mint",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "_imageUrl",
+					"type": "string"
+				}
+			],
+			"name": "mint",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "_memory",
+					"type": "string"
+				}
+			],
+			"name": "registerEntry",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "requestId",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "_promptId",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "string",
+					"name": "_response",
+					"type": "string"
+				}
+			],
+			"name": "respond",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "_prompt",
+					"type": "string"
+				}
+			],
+			"name": "submitPrompt",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "promptId",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

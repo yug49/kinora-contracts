@@ -1,0 +1,356 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_cinft",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "minBid",
+						"type": "uint256"
+					}
+				],
+				"name": "CINFTVickreyAuction__BidAmountLowerThanMinBid",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CINFTVickreyAuction__BidAmountNotEqualToValueSent",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CINFTVickreyAuction__BidTimeExpired",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CINFTVickreyAuction__BidTimeNotExpired",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CINFTVickreyAuction__NftAlreadyOnSale",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CINFTVickreyAuction__NftNotOnSale",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_bid",
+						"type": "uint256"
+					}
+				],
+				"name": "bid",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "completeAuction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getDescription",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_seller",
+						"type": "address"
+					}
+				],
+				"name": "getListOfNftsBySeller",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getMinBid",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getNftsBidEndTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getNftsOnSale",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "isNftOnSale",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minBid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_bidTimeInSeconds",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					}
+				],
+				"name": "putNftOnSale",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"author": "Yug Agarwal",
+			"details": "It is a Vickrey auction contract for CINFTs where users can put their CINFTs on sale, bid on them, and complete the auction.It is deployed on TENIt is only possible on TEN since it leverage its FHE capabilities to keep the bids secret until the auction is complete.                                                                          .            .                                   .#                         +#####+---+###+#############+-                  -+###.                        +###+++####+##-+++++##+++##++####+-.         -+###+++                         +#########.-#+--+####++###- -########+---+++#####+++                          +#######+#+++--+####+-..-+-.###+++########+-++###++.                          +######.     +#-#####+-.-------+############+++####-                           +####++...     ########-++-        +##########++++++.                           -#######-+.    .########+++          -++######+++-                                #++########--+-+####++++-- . ..    .-#++--+##+####.                               -+++++++++#####---###---.----###+-+########..-+#++##-                             ++###+++++#####-..---.. .+##++++#++#++-+--.   .-++++#                              .###+.  .+#+-+###+ ..    +##+##+#++----...---.  .-+--+.                             ###+---------+####+   -####+-.......    ...--++.  .---.                            -#++++-----#######+-  .-+###+.... .....      .-+##-.  .                             ##+++###++######++-.   .--+---++---........  ...---.  .                             -####+-+#++###++-.        .--.--...-----.......--..... .                             +######+++###+--..---.....  ...---------------.. .. .  .                             .-#########+#+++--++--------......----++--.--.  .--+---.                              -+++########++--++++----------------------.--+++--+++--                              .######-.-++++###+----------------------..---++--++-+++---..                              -##########-------+-----------------------+-++-++----..----+----+#####++--..              -#############+..  ..--..----------.....-+++++++++++++++++##################+.            --+++++#########+-   . ....  ....... -+++++++++++++++++++############-.----+##-           -----....-+#######+-             .. -+++++++++++++++++++++##+######+.       +++.          --------.....---+#####+--......----.+++++++++++++++++++++##+-+++##+.        -++-          -------...   .--++++++---.....-----.+++++++++++++++++++++++. -+++##-        .---          #################+--.....-------.  .+++++++++++++++++++++-       -+-.       .---          +#########++++-.. .......-+--..--++-++++++++++++++++++++-         .-... ....----          -#####++---..   .--       -+++-.  ..+++++++++++++++++++--        .-+-......-+---          +####+---...    -+#-   .  --++++-. .+++++++++++++++++++---        --        -+--          ++++++++++--....-++.--++--.--+++++-.+++++++++++++++++++---. .......         ----          .--++#########++-.--.+++++--++++###+-++++++++++++++++++++----   .-++-        ----          .-+#############+-.++#+-+-++#######-++++++++++++++++++++----   -++++-      ..---          .---+############+.+###++--++#####++-+++++++++++++++++++++-------++++-........-+-          --+-+##########-+######+++++-++++++-++++++++++++++++++++++-----.----.......---+-          .--+---#######..+#######+++++++--+++-+++++++++++++++++++++++-----------------+++-          .++--..-+##-.-########+++++---++ .+-.+++++++++++++++++++++++++++++++++++---+++++-          -+++. ..-..-+#########++-++--..--....+++++++++++++++++++++++++++++++++++++++++++-          -++-......-+++############++++----- .+++++++++++++++++++++++++++++++++++++++++++-          +##-.....---+#######+####+####+--++-.+++++++++++++++++++++++++++++++++++++++++++-          .#+++-...-++######++-+-----..----++##-+++++++++++++++++++++++++++++++++++++++++++-          .+++--------+##----+------+-..----+++-+++++++++++++++++++++++++++++++++++++++++++-          ----.-----+++-+-...------++-----...--+++++++++++++++++++++++++++++++++++++++++++-          .-..-.--.----..--.... ....++--.  ....-+++++++++++++++++++++++++++++++++++++++++++-          -----------.---..--..   ..+.  . ... .+++++++++++++++++++++++++++++++++++++++++++-          .+#+#+---####+-.    .....--...   .    .+++++++++++++++++++++++++++++++++++++++++++-          -+++++#++++++++.    ..-...--.. ..     .+++++++++++++++++++++++++++++++++++++++++++-          ++++++-------++--   . ....--.. . . .. .+++++++++++++++++++++++++-+----------...              -++++--++++.------......-- ...  ..  . .---------------...                                    -++-+####+++---..-.........                                                                   .....                                                                                      ",
+			"kind": "dev",
+			"methods": {
+				"bid(uint256,uint256)": {
+					"details": "to bid on a nft on sale, the bidder must send the bid amount in msg.value",
+					"params": {
+						"_bid": "The bid amount",
+						"_tokenId": "The tokenId of the nft to bid on"
+					}
+				},
+				"completeAuction(uint256)": {
+					"details": "This function can be called by anyone after the bid time has expiredIf there are no bids, the nft is returned to the sellerThe highest bidder gets the nft and pays the second highest bid amount to the sellerThe highest bidder is refunded the difference between their bid and the second highest bidAll other bidders are refunded their bidsIf there is only one bid, the highest bidder gets the nft and pays",
+					"params": {
+						"_tokenId": "The tokenId of the nft to complete the auction for"
+					}
+				},
+				"constructor": {
+					"params": {
+						"_cinft": "The address of the CINFT contract"
+					}
+				},
+				"getDescription(uint256)": {
+					"params": {
+						"_tokenId": "The token id of nft"
+					},
+					"returns": {
+						"_0": "The description of the NFT on Sale"
+					}
+				},
+				"getListOfNftsBySeller(address)": {
+					"params": {
+						"_seller": "The address of the seller"
+					},
+					"returns": {
+						"_0": "The list of tokenIds of nfts put on sale by the seller"
+					}
+				},
+				"getMinBid(uint256)": {
+					"params": {
+						"_tokenId": "The tokenId of the nft"
+					},
+					"returns": {
+						"_0": "The minimum bid for the nft"
+					}
+				},
+				"getNftsBidEndTime(uint256)": {
+					"params": {
+						"_tokenId": "The tokenId of the nft"
+					},
+					"returns": {
+						"_0": "The end time of the bid for the nft"
+					}
+				},
+				"getNftsOnSale()": {
+					"returns": {
+						"_0": "The address of the CINFT contract"
+					}
+				},
+				"isNftOnSale(uint256)": {
+					"params": {
+						"_tokenId": "The tokenId of the nft"
+					},
+					"returns": {
+						"_0": "The status of NFT, true if ON_SALE, false if NOT_ON_SALE"
+					}
+				},
+				"putNftOnSale(uint256,uint256,uint256,string)": {
+					"details": "This function assumes that the owner has already approved the contract to transfer the nft",
+					"params": {
+						"_bidTimeInSeconds": "The auction time (in secs) for this nft",
+						"_description": "The desciption by seller",
+						"_minBid": "Min bid for the nft",
+						"_tokenId": "The tokenId of the nft to be put on sale"
+					}
+				}
+			},
+			"title": "CINFT Vickrey Auction Contract",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"CINFTVickreyAuction.sol": "CINFTVickreyAuction"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0xf78f05f3b8c9f75570e85300d7b4600d7f6f6a198449273f31d44c1641adb46f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e28b872613b45e0e801d4995aa4380be2531147bfe2d85c1d6275f1de514fba3",
+				"dweb:/ipfs/QmeeFcfShHYaS3BdgVj78nxR28ZaVUwbvr66ud8bT6kzw9"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x8891738ffe910f0cf2da09566928589bf5d63f4524dd734fd9cedbac3274dd5c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://971f954442df5c2ef5b5ebf1eb245d7105d9fbacc7386ee5c796df1d45b21617",
+				"dweb:/ipfs/QmadRjHbkicwqwwh61raUEapaVEtaLMcYbQZWs9gUkgj3u"
+			]
+		},
+		"CINFTVickreyAuction.sol": {
+			"keccak256": "0xe53c1c0f54f3d75e3dfc627266a4dbff24f09cf22ebc3d5bcd74886478863dcd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2d1946951e43fd82cec86652eb1f5df51fe73d1b2e59622c71cf27cbd638a152",
+				"dweb:/ipfs/QmYE9Rp2qTjiTDZX5hYF7VEZXkYxBNGEcob9myewC4dXFW"
+			]
+		}
+	},
+	"version": 1
+}
